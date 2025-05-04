@@ -38,7 +38,7 @@
 
 
     <build>
-        <finalName>war-project</finalName>
+        <finalName>k8s</finalName>
         <plugins>
             <!-- Compiler Plugin -->
             <plugin>
