@@ -35,3 +35,18 @@ kind: Namespace
 metadata:
   name: java-app
 
+---
+apiVersion: v1
+kind: Service 
+metadata:
+  name: java-app
+  namespace: java-app
+spec:
+  selector:
+    app: java-app
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: NodePort
+
