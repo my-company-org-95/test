@@ -31,6 +31,15 @@ pipeline{
                 }
             }
         }
+        stage('Deploy to Kubernetes') {
+          steps {
+         
+             sh 'kubectl apply -f k8s-deployment.yml'
+             sh 'kubectl get svc -n java-app -o wide'
+             sh 'sleep 120 '
+             sh 'kubectl delete -f  k8s-deployment.yml'
+          }
+        }
         
         
         
