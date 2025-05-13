@@ -27,3 +27,11 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "200m"
+
+
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: java-app
+
