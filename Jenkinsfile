@@ -36,8 +36,9 @@ pipeline{
          
              sh 'kubectl apply -f k8s-deployment.yml'
              sh 'kubectl get svc -n java-app -o wide'
-             sh 'sleep 120 '
-             sh 'kubectl delete -f  k8s-deployment.yml'
+             sh 'kubectl apply -f deployment-HPA.yml'
+             sh 'sleep 180'
+             sh 'kubectl delete all --all -n java-app'
           }
         }
         
